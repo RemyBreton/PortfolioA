@@ -1,0 +1,139 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<BaseLayout title="About | Rémy Breton" description="About Rémy Breton">
+  <div class="stack gap-20">
+    <main class="wrapper about">
+      <Hero
+        title="About"
+        tagline="Merci d'être passé. Lisez ci-dessous pour en savoir plus sur moi-même et mon parcours."
+      />
+
+      <section>
+        <h2 class="section-title">Background</h2>
+        <div class="content">
+          <p>
+            Ayant eu plusieurs vies dans mon passé, de la maçonnerie au sport puis au commerce j'ai décidé de revenir à ma passion première pour la tech.
+          </p>
+		      <p>J'ai aujourd'hui trouvé ma voie dans le domaine du Développement Web et souhaite continuer d'appronfondir mes compétences et connaissances</p>
+          <figure>
+            <q>Dis-moi, et j’oublierai. Enseigne-moi, et je me souviendrai. Implique-moi, et j’apprendrai</q>
+            <figcaption>Benjamin Franklin</figcaption>
+          </figure>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Ce que j'aime</h2>
+        <div class="content">
+          <p>
+            Ce que j'apprécie particulièrement dans le développement web, c'est
+            la possibilité de créer des choses incroyables en quelques lignes de
+            code seulement. J'aime la satisfaction que cela procure de voir une
+            idée prendre vie et se concrétiser grâce à ma programmation.
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Diplômes</h2>
+        <div class="content">
+          <p>
+            Développeur WEB - Septembre 2022 à avril 2023 - OpenClassroom
+            Diplôme de niveau 5 (bac +2) RNCP
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Skills</h2>
+        <div class="content">
+          <p>
+            Curieux, Autonome, Travail d'équipe, Polyvalent, Ponctuel et Avenant
+          </p>
+        </div>
+      </section>
+      <h2 class="section-title">Compétences</h2>
+      <div class="content">
+        <p>
+          HTML 5, CSS 3, JavaScript, Git, React, Node.js, TypeScript, Next.js,
+          Tailwindcss, Bootstrap, Postman, mongoDB, Express.
+        </p>
+		<ul>
+			<li>Découper, assembler et intégrer tous les éléments d’une maquette graphique en HTML5 et CSS</li>
+			<li>Ajouter du contenu audio et vidéo en HTML5</li>
+			<li>Animer les pages web avec CSS3</li>
+			<li>Appliquer les standards du web et les normes en vigueur</li>
+			<li>Construire un site web fluide s’adaptant à tout type d’écran (web, smartphone et tablette)</li>
+			<li>Améliorer le référencement naturel en utilisant les balises selon leur sémantique</li>
+			<li>Faire réagir la page web en fonction des actions de l’utilisateur en JavaScript</li>
+			<li>Se connecter à un service web pour exploiter des données tierces (API)</li>
+			<li>Gérer les comptes utilisateurs</li>
+			<li>Concevoir un site maintenable grâce à la gestion des erreurs et exceptions</li>
+			<li>Créer, gérer et afficher le contenu d’une base de données.</li>
+		</ul>
+      </div>
+    </main>
+  </div>
+
+  <ContactCTA />
+</BaseLayout>
+
+<style>
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  img {
+    margin-top: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--gray-200);
+  }
+
+  .section-title {
+    grid-column-start: 1;
+    font-size: var(--text-xl);
+    color: var(--gray-0);
+  }
+
+  .content {
+    grid-column: 2 / 4;
+  }
+
+  .content :global(a) {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+  }
+
+  .content :global(a:hover),
+  .content :global(a:focus) {
+    text-decoration-color: currentColor;
+  }
+
+  @media (min-width: 50em) {
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 60% 1fr;
+    }
+
+    .about > :global(:first-child) {
+      grid-column-start: 2;
+    }
+
+    section {
+      display: contents;
+      font-size: var(--text-lg);
+    }
+  }
+</style>
